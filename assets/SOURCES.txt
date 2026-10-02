@@ -1,0 +1,17 @@
+Pivot Rush website assets
+
+Copied without pixel, crop, color, or text alterations from the existing game repository.
+Source repository: https://github.com/Dogukan-Komurcu/TekDonus
+Source checkout commit: b7a0cc93f523dbefe0ef9d12d9788e7ea36b3624
+
+pivot-rush-gameplay-en.png (1320 x 2868)
+Source: AppStoreAssets/Release-1.4.30/Originals/Store-en-01-Gameplay.png
+SHA-256: 6506c3359d195aab43130c74dec7a68dd36cf72ae993f45e50fe2d93e908cb5b
+
+pivot-rush-gameplay-tr.png (1320 x 2868)
+Source: AppStoreAssets/Release-1.4.30/Originals/Store-tr-01-Gameplay.png
+SHA-256: 7936983cbc0971bd0ae1c4aa86d775e2887806434938122fb45ef22dda462358
+
+pivot-rush-icon.png
+Source: ios/TekDonusIOS/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png
+SHA-256: 31dc8ec8ddce614e0b13cd86e5ce77e0bafb4b6ed01d24cf25171b059c9fa2e7

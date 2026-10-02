@@ -1,30 +1,123 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#060b1c">
-  <title>Tek Dönüş</title>
-  <style>
-    :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; }
-    * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #060b1c; color: #effbff; }
-    main { width: min(680px, calc(100% - 40px)); padding: 48px 0; }
-    .eyebrow { color: #52e8ff; font-size: 12px; font-weight: 700; letter-spacing: .18em; }
-    h1 { margin: 12px 0 10px; font-size: clamp(40px, 9vw, 72px); line-height: .95; }
-    p { color: #a8b6cd; font-size: 17px; line-height: 1.65; }
-    a { color: #52e8ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    footer { margin-top: 42px; padding-top: 20px; border-top: 1px solid #18243f; font-size: 14px; color: #71809a; }
-  </style>
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="A growing trail. A shrinking escape. Discover Pivot Rush, the neon arcade game with solo score challenges and online Flow Race duels. Get support in English or Turkish.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pivot Rush: Neon Arcade">
+  <meta property="og:description" content="A growing trail. A shrinking escape. Find your line in Pivot Rush.">
+  <meta property="og:url" content="https://dogukan-komurcu.github.io/">
+  <meta property="og:image" content="https://dogukan-komurcu.github.io/assets/pivot-rush-icon.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="tr_TR">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://dogukan-komurcu.github.io/">
+  <link rel="icon" href="assets/pivot-rush-icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/pivot-rush-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Pivot Rush: Neon Arcade</title>
+  <script src="site.js" defer></script>
 </head>
 <body>
-  <main>
-    <div class="eyebrow">MINIMAL ARCADE</div>
-    <h1>Tek Dönüş</h1>
-    <p>90° döndür. Akışı yönet. İnternet bağlantısı olmadan oynanabilen, hızlı ve odaklı bir mobil arcade deneyimi.</p>
-    <p><a href="privacy.html">Gizlilik Politikası</a></p>
-    <footer>İletişim: <a href="mailto:komurcudogukan46@gmail.com">komurcudogukan46@gmail.com</a></footer>
-  </main>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Pivot Rush home" data-i18n-aria="brandLabel">
+        <img src="assets/pivot-rush-icon.png" width="42" height="42" alt="" class="brand-icon">
+        <span>Pivot Rush<span class="brand-detail">NEON ARCADE</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation" data-i18n-aria="navLabel">
+        <a href="#game" data-i18n="navGame">The game</a>
+        <a href="#support" data-i18n="navSupport">Support</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language" data-i18n-aria="languageLabel">
+        <button type="button" lang="en" data-language="en" aria-pressed="true" aria-label="English">EN</button>
+        <button type="button" lang="tr" data-language="tr" aria-pressed="false" aria-label="Türkçe">TR</button>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-i18n="eyebrow">FIND YOUR FLOW. KEEP YOUR EDGE.</span></p>
+          <h1 id="hero-title"><span data-i18n="heroLine1">Every turn</span><span class="accent-text" data-i18n="heroLine2">changes everything.</span></h1>
+          <p class="hero-description" data-i18n="heroDescription">Your trail keeps growing. Your room to move doesn't. Swipe, time your turns, and see how far your reflexes can take you.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://apps.apple.com/app/id6801113680"><span data-i18n="download">Download on the App Store</span><span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#game"><span data-i18n="discover">Discover the game</span><span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="availability" data-i18n="availability">Available on the App Store · Free download · In-app purchases</p>
+          <div class="hero-bottom"><span class="hero-rule" aria-hidden="true"></span><p data-i18n="heroNote">Your own trail is your next challenge.</p></div>
+        </div>
+        <figure class="hero-media">
+          <div class="media-orbit" aria-hidden="true"></div>
+          <div class="game-capture">
+            <img id="gameplay-image" src="assets/pivot-rush-gameplay-en.png" width="1320" height="2868" alt="Pivot Rush gameplay: a short turquoise trail turns through a dark arena with yellow energy pickups." fetchpriority="high" data-i18n-alt="gameplayAlt">
+          </div>
+          <figcaption><span class="caption-line" aria-hidden="true"></span><span data-i18n="gameplayCaption">Actual gameplay</span></figcaption>
+        </figure>
+      </section>
+      <section class="game-section" id="game" aria-labelledby="game-title">
+        <div class="section-intro">
+          <div><p class="eyebrow" data-i18n="gameEyebrow">EASY TO START. HARD TO PUT DOWN.</p><h2 id="game-title"><span data-i18n="gameLine1">Small arena.</span><span data-i18n="gameLine2">Big decisions.</span></h2></div>
+          <p class="section-description" data-i18n="gameDescription">Collect energy and find your rhythm. Get comfortable in Easy, then test your turns against your own growing trail in Medium and Hard.</p>
+        </div>
+        <div class="features">
+          <article class="feature">
+            <span class="feature-number" aria-hidden="true">01 /</span>
+            <h3 data-i18n="soloTitle">Chase your best</h3>
+            <p data-i18n="soloDescription">Pick Easy, Medium, or Hard and chase a new personal best. Each run is another chance to sharpen your reflexes.</p>
+            <span class="feature-tag" data-i18n="soloTag">SOLO ARCADE</span>
+          </article>
+          <article class="feature">
+            <span class="feature-number" aria-hidden="true">02 /</span>
+            <h3 data-i18n="raceTitle">Make it a race</h3>
+            <p data-i18n="raceDescription">Challenge a friend or find a quick match in Flow Race. Two players, 60 seconds, and a live online race through Game Center.</p>
+            <span class="feature-tag" data-i18n="raceTag">ONLINE FLOW RACE</span>
+          </article>
+          <article class="feature">
+            <span class="feature-number" aria-hidden="true">03 /</span>
+            <h3 data-i18n="styleTitle">Find your style</h3>
+            <p data-i18n="styleDescription">Explore character looks, trails, and arena styles. Complete daily tasks and give each run a look of your own.</p>
+            <p class="paid-disclosure" data-i18n="paidDisclosure">Some cosmetics require crystals or an in-app purchase.</p>
+            <span class="feature-tag" data-i18n="styleTag">CUSTOMIZE YOUR RUN</span>
+          </article>
+        </div>
+        <p class="feature-footnote" data-i18n="raceRequirement">Online races require an internet connection and Game Center sign-in.</p>
+      </section>
+      <section class="support-section" id="support" aria-labelledby="support-title">
+        <div class="support-copy">
+          <p class="eyebrow" data-i18n="supportEyebrow">PLAYER SUPPORT</p>
+          <h2 id="support-title" data-i18n="supportTitle">Let's get you back in the flow.</h2>
+          <p data-i18n="supportDescription">A question, a purchase issue, or something that doesn't feel right? Contact the developer directly in English or Turkish.</p>
+          <a class="support-email" href="mailto:komurcudogukan46@gmail.com?subject=Pivot%20Rush%20support">komurcudogukan46@gmail.com<span aria-hidden="true">↗</span></a>
+          <p class="support-note" data-i18n="supportNote">Include your device model, iOS version, app version, and what happened. Please don't send passwords or payment card details.</p>
+        </div>
+        <div class="support-faq">
+          <h3 data-i18n="faqTitle">A few useful answers</h3>
+          <details>
+            <summary data-i18n="faqPurchaseQuestion">Need help with a purchase?</summary>
+            <p data-i18n="faqPurchaseAnswer">For a missing item, email the developer with the product name and what happened. Apple handles App Store payments and refund requests.</p>
+            <p><a href="https://support.apple.com/118223" class="inline-link" data-i18n="appleRefund">Apple's refund guidance ↗</a></p>
+          </details>
+          <details>
+            <summary data-i18n="faqRaceQuestion">What do I need for online races?</summary>
+            <p data-i18n="faqRaceAnswer">Flow Race uses Apple Game Center. Sign in to Game Center on your device and use an internet connection to join an online race.</p>
+          </details>
+          <details>
+            <summary data-i18n="faqPrivacyQuestion">Where can I read about privacy?</summary>
+            <p data-i18n="faqPrivacyAnswer">Our privacy policy explains local progress, optional Apple services, in-app purchases, and advertising.</p>
+            <p><a href="privacy.html" class="inline-link" data-i18n="privacy">Read the privacy policy ↗</a></p>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p>© 2026 Doğukan Kömürcü <span class="footer-divider" aria-hidden="true">/</span> Pivot Rush</p>
+      <div><a href="privacy.html" data-i18n="footerPrivacy">Privacy policy</a><a href="mailto:komurcudogukan46@gmail.com" data-i18n="footerContact">Contact</a><a href="https://apps.apple.com/app/id6801113680">App Store ↗</a></div>
+    </footer>
+    <noscript><p class="noscript-message">For support in English or Turkish / İngilizce veya Türkçe destek: <a href="mailto:komurcudogukan46@gmail.com">komurcudogukan46@gmail.com</a></p></noscript>
+  </div>
 </body>
 </html>
