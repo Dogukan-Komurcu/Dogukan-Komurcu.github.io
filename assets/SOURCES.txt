@@ -1,6 +1,8 @@
 Pivot Rush website assets
 
-Copied without pixel, crop, color, or text alterations from the existing game repository.
+The three original PNG assets below are copied without pixel, crop, color,
+or text alterations from the existing game repository. The separately named
+192px icon derivative is only a web transfer-size optimization.
 Source repository: https://github.com/Dogukan-Komurcu/TekDonus
 Source checkout commit: b7a0cc93f523dbefe0ef9d12d9788e7ea36b3624
 
@@ -15,3 +17,7 @@ SHA-256: 7936983cbc0971bd0ae1c4aa86d775e2887806434938122fb45ef22dda462358
 pivot-rush-icon.png
 Source: ios/TekDonusIOS/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png
 SHA-256: 31dc8ec8ddce614e0b13cd86e5ce77e0bafb4b6ed01d24cf25171b059c9fa2e7
+Web delivery optimization: pivot-rush-icon-192.png is a 192x192 downsample
+of the preserved 1024x1024 pivot-rush-icon.png. No artwork change.
+The original remains the Open Graph image; the small derivative is used by
+the page header, favicon and Apple touch icon to reduce transfer size.
