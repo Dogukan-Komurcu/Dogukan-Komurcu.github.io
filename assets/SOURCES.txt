@@ -21,3 +21,19 @@ Web delivery optimization: pivot-rush-icon-192.png is a 192x192 downsample
 of the preserved 1024x1024 pivot-rush-icon.png. No artwork change.
 The original remains the Open Graph image; the small derivative is used by
 the page header, favicon and Apple touch icon to reduce transfer size.
+
+Number War landing page assets (added 9 October 2026)
+
+Copied unchanged from the existing local Number War project; no pixel,
+crop, color or text alterations were made. The screenshot is labeled as
+Turkish gameplay in both languages on number-war.html.
+Source repository: https://github.com/Dogukan-Komurcu/number-war
+Local source checkout base commit: 8ccbd5a
+
+number-war-icon.png (192 x 192)
+Source: icon-192.png
+SHA-256: 871a3a1b2d8a279a4250f8304cf7a8aefccd3131664163046e1f364137f36ea9
+
+number-war-gameplay-tr.png (1242 x 2688)
+Source: resources/app-store-screenshots/iphone-65/02-operations-tr.png
+SHA-256: 7ac3fc4f446577d2d8ae5116129ae27527847de4a0233b18d2e76c9d46c9144f
