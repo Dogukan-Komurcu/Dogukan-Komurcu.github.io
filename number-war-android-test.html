@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131c">
+  <title>Number War — Android kapalı testi</title>
+  <meta name="description" content="Number War Android kapalı testine katıl: önce Google Grubu'na katıl, ardından aynı hesapla Google Play test kaydını tamamla ve oyunu yükle.">
+  <link rel="canonical" href="https://dogukan-komurcu.github.io/number-war-android-test.html">
+  <link rel="icon" href="storefront-assets/icon.jpg" type="image/jpeg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Number War — Android kapalı testi">
+  <meta property="og:description" content="Tek bağlantı, iki adım: Google Grubu'na katıl, aynı hesapla Google Play test kaydını tamamla ve oyunu yükle.">
+  <meta property="og:url" content="https://dogukan-komurcu.github.io/number-war-android-test.html">
+  <meta property="og:image" content="https://dogukan-komurcu.github.io/storefront-assets/icon.jpg">
+  <meta property="og:image:alt" content="Number War oyun simgesi">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #10131c;
+      --panel: #191e2c;
+      --ink: #f6f7fc;
+      --muted: #b3bbcf;
+      --line: #30374a;
+      --gold: #ffc341;
+      --gold-ink: #211600;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-synthesis: none;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); line-height: 1.65; }
+    a { color: var(--gold); text-underline-offset: 4px; }
+    a, button, summary { -webkit-tap-highlight-color: transparent; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
+    img { display: block; max-width: 100%; height: auto; }
+    h1, h2, h3, p { overflow-wrap: break-word; }
+    h1, h2, h3 { line-height: 1.2; }
+    .shell { width: min(940px, calc(100% - 40px)); margin-inline: auto; }
+    .skip { position: absolute; top: -100px; left: 16px; z-index: 10; padding: 12px 18px; background: var(--gold); color: var(--gold-ink); }
+    .skip:focus { top: 12px; }
+    .site-header { border-bottom: 1px solid var(--line); }
+    .header-inner { min-height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; font-size: 19px; font-weight: 800; letter-spacing: -.5px; }
+    .brand img { width: 42px; height: 42px; border-radius: 12px; }
+    .header-label { font-size: 12px; color: var(--muted); text-align: right; }
+    .hero { padding-block: 52px 30px; max-width: 720px; }
+    .eyebrow { margin: 0 0 14px; color: var(--gold); text-transform: uppercase; font-size: 11px; font-weight: 800; letter-spacing: 1.7px; }
+    h1 { margin: 0 0 20px; font-size: clamp(36px, 6vw, 58px); letter-spacing: -1.9px; }
+    .hero > p:last-child { margin: 0; color: var(--muted); font-size: 18px; }
+    .status { display: grid; grid-template-columns: 40px 1fr; gap: 16px; padding: 24px; background: #29251a; border: 1px solid #8e7437; border-radius: 16px; margin-bottom: 22px; }
+    .status-mark { display: grid; place-items: center; align-self: start; width: 38px; height: 38px; border: 1px solid var(--gold); border-radius: 50%; color: var(--gold); font-size: 23px; font-weight: 750; line-height: 1; }
+    .status h2 { margin: 0 0 8px; font-size: 21px; letter-spacing: -.4px; }
+    .status p { margin: 0; color: #e0d9c5; font-size: 14px; }
+    .account-note { padding: 20px 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); margin-bottom: 34px; }
+    .account-note h2 { margin: 0 0 7px; font-size: 17px; }
+    .account-note p { margin: 0; color: var(--muted); font-size: 14px; }
+    .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .step { min-width: 0; padding: 26px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); }
+    .step-label { display: inline-flex; align-items: center; gap: 10px; color: var(--gold); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.3px; }
+    .step-number { display: grid; place-items: center; width: 29px; height: 29px; border: 1px solid #6d5b2f; border-radius: 9px; font-size: 14px; letter-spacing: 0; }
+    .step h2 { margin: 19px 0 12px; font-size: 25px; letter-spacing: -.7px; }
+    .step p { margin: 0 0 17px; color: var(--muted); font-size: 14px; }
+    .step p strong { color: var(--ink); }
+    .action { display: inline-flex; width: 100%; min-height: 54px; align-items: center; justify-content: center; gap: 10px; padding: 14px 16px; border: 1px solid var(--gold); border-radius: 10px; background: var(--gold); color: var(--gold-ink); text-decoration: none; font: inherit; font-size: 15px; font-weight: 800; line-height: 1.45; text-align: center; }
+    .action[href]:hover { background: #ffd474; }
+    .action.secondary { margin-top: 12px; background: transparent; border-color: #6b7894; color: var(--ink); }
+    .action.secondary[href]:hover { background: #252d40; }
+    .step .hint { margin: 12px 0 0; font-size: 12px; color: var(--muted); }
+    .step .important { margin-top: 18px; padding-top: 17px; border-top: 1px solid var(--line); font-size: 13px; }
+    .section { margin-top: 44px; }
+    .section > h2 { font-size: 27px; letter-spacing: -.8px; margin: 0 0 17px; }
+    .browser-note { border-left: 3px solid var(--gold); padding: 18px 22px; background: var(--panel); border-radius: 0 10px 10px 0; }
+    .browser-note h2 { font-size: 17px; margin: 0 0 8px; }
+    .browser-note p { margin: 0; font-size: 14px; color: var(--muted); }
+    .participation { display: grid; grid-template-columns: 100px 1fr; align-items: center; gap: 24px; padding: 26px; border: 1px solid var(--line); border-radius: 16px; }
+    .days { color: var(--gold); line-height: 1; text-align: center; font-weight: 800; }
+    .days strong { display: block; font-size: 48px; letter-spacing: -2px; }
+    .days span { display: block; margin-top: 8px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+    .participation h2 { margin: 0 0 10px; font-size: 22px; }
+    .participation p { margin: 0; color: var(--muted); font-size: 14px; }
+    .faq { border-top: 1px solid var(--line); }
+    details { border-bottom: 1px solid var(--line); }
+    summary { min-height: 60px; padding: 20px 35px 20px 0; cursor: pointer; position: relative; list-style: none; font-size: 15px; font-weight: 700; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 3px; top: 15px; color: var(--gold); font-size: 25px; font-weight: 400; }
+    details[open] summary::after { content: "−"; }
+    details p { margin: 0 0 20px; max-width: 760px; color: var(--muted); font-size: 14px; }
+    details ol { margin: 0 0 22px; padding-left: 22px; color: var(--muted); font-size: 14px; }
+    details li + li { margin-top: 7px; }
+    .privacy-note { margin-block: 30px 48px; color: var(--muted); font-size: 12px; }
+    .site-footer { padding-block: 24px; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; color: var(--muted); font-size: 12px; }
+    .footer-inner nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+    .footer-inner a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); }
+    @media (max-width: 680px) {
+      .shell { width: calc(100% - 32px); }
+      .header-inner { min-height: 76px; }
+      .brand { gap: 9px; font-size: 17px; }
+      .brand img { width: 36px; height: 36px; border-radius: 10px; }
+      .header-label { max-width: 90px; font-size: 11px; line-height: 1.4; }
+      .hero { padding-top: 35px; }
+      h1 { letter-spacing: -1.3px; }
+      .hero > p:last-child { font-size: 16px; }
+      .status { grid-template-columns: 30px 1fr; gap: 12px; padding: 19px 17px; }
+      .status-mark { width: 29px; height: 29px; font-size: 19px; }
+      .status h2 { font-size: 19px; }
+      .account-note { padding: 18px; margin-bottom: 24px; }
+      .steps { grid-template-columns: 1fr; gap: 16px; }
+      .step { padding: 22px; }
+      .step h2 { font-size: 24px; }
+      .section { margin-top: 32px; }
+      .section > h2 { font-size: 25px; }
+      .browser-note { padding: 17px; }
+      .participation { grid-template-columns: 65px 1fr; gap: 17px; padding: 20px 17px; }
+      .days strong { font-size: 42px; }
+      .participation h2 { font-size: 19px; }
+      .footer-inner { display: block; }
+      .footer-inner nav { margin-top: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+    @media (forced-colors: active) { .action, .status, .step, .account-note, .participation { border: 1px solid CanvasText; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">İçeriğe geç</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="number-war.html"><img src="storefront-assets/icon.jpg" width="42" height="42" alt="">Number War</a>
+      <span class="header-label">Android · Kapalı test</span>
+    </div>
+  </header>
+  <main class="shell" id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Sayılar. Rota. Birlikte daha iyi bir oyun.</p>
+      <h1 id="page-title">Number War'ı<br>birlikte deneyelim.</h1>
+      <p>Android kapalı testine katılmak için aşağıdaki iki adımı tamamlaman gerekecek. Google Grubu, test kaydı ve kurulum bağlantılarını burada bulacaksın.</p>
+    </section>
+
+    <section class="status" aria-labelledby="group-title">
+      <span class="status-mark" aria-hidden="true">i</span>
+      <div>
+        <h2 id="group-title">Yeni test grubu</h2>
+        <p><strong>20 Ekim 2026:</strong> Number War’a özel test grubu oluşturuldu. Gruba şimdi katılabilirsin. Yeni grubun Google Play erişim güncellemesi henüz tamamlanmadı. Play sayfasında uygulama görünmüyorsa aynı hesapla daha sonra tekrar dene.</p>
+      </div>
+    </section>
+
+    <aside class="account-note" aria-labelledby="account-title">
+      <h2 id="account-title">Üç yerde de aynı Google hesabını kullan</h2>
+      <p>Google Grubu'nda, Google Play test sayfasında ve telefonunun Play Store uygulamasında <strong>aynı Google hesabı</strong> açık olmalı. Birden fazla hesabın varsa her adımda sağ üstteki profil resminden kontrol et.</p>
+    </aside>
+
+    <ol class="steps" aria-label="Teste katılmak için gerekli iki adım">
+      <li class="step">
+        <span class="step-label"><span class="step-number" aria-hidden="true">1</span> Birinci adım</span>
+        <h2>Google Grubu'na katıl</h2>
+        <p>Grup sayfasını aç ve Google hesabınla <strong>“Gruba katıl”</strong> işlemini tamamla. Grup katılımı onaylandıktan sonra bu sayfaya dön.</p>
+        <a class="action" href="https://groups.google.com/g/number-war-android-testers">Google Grubu'na katıl <span aria-hidden="true">↗</span></a>
+        <p class="hint">Grup: Number War Android Testers</p>
+        <p class="important"><strong>Bu adım tek başına yeterli değil.</strong> Gruba katılmak, Google Play testine otomatik kayıt yapmaz. İkinci adımı da tamamlamalısın.</p>
+      </li>
+      <li class="step">
+        <span class="step-label"><span class="step-number" aria-hidden="true">2</span> İkinci adım</span>
+        <h2>Test kullanıcısı ol ve yükle</h2>
+        <p>Google Play test sayfasını aç. <strong>“Test kullanıcısı ol”</strong> veya <strong>“Become a tester”</strong> seçeneğini onayla. Teste katıldığını belirten mesajdan sonra uygulamayı yükle.</p>
+        <a class="action" href="https://play.google.com/apps/testing/com.dogukankomurcu.numberwar">Google Play testine katıl <span aria-hidden="true">↗</span></a>
+        <a class="action secondary" href="https://play.google.com/store/apps/details?id=com.dogukankomurcu.numberwar">Katıldıktan sonra Play Store'dan yükle <span aria-hidden="true">↗</span></a>
+        <p class="hint">Yükleme bağlantısı, grup üyeliği ve Play test kaydı tamamlandıktan sonra kullanılabilir.</p>
+      </li>
+    </ol>
+
+    <aside class="section browser-note" aria-labelledby="browser-title">
+      <h2 id="browser-title">WhatsApp'tan geldiysen Chrome'da aç</h2>
+      <p>Google hesabın uygulama içindeki tarayıcıda görünmeyebilir. WhatsApp menüsünden “Tarayıcıda aç” / “Chrome'da aç” seçeneğini kullan. Bu seçenek yoksa sayfa bağlantısını kopyalayıp Chrome'un adres çubuğuna yapıştır. Sonra Google hesabını kontrol ederek iki adımı sırayla tamamla.</p>
+    </aside>
+
+    <section class="section participation" aria-labelledby="participation-title">
+      <div class="days" aria-hidden="true"><strong>14</strong><span>Gün</span></div>
+      <div>
+        <h2 id="participation-title">En az 14 gün boyunca testte kal</h2>
+        <p>Google Play'de katılımını onayladıktan sonra en az 14 gün kesintisiz testte kalmanı ve bu sürede oyunu düzenli denemeni rica ediyoruz. Karşılaştığın sorunları ve fikirlerini Google Grubu'nda paylaşabilirsin.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+      <h2 id="faq-title">Bir adımda takıldıysan</h2>
+      <div class="faq">
+        <details>
+          <summary>“Uygulama kullanılamıyor” veya “App not available” yazıyor.</summary>
+          <ol>
+            <li>Gruba katıldığın hesapla test sayfasında ve telefonunun Play Store uygulamasında açık olan hesabın aynı olduğunu kontrol et.</li>
+            <li>Google Grubu üyeliğinin tamamlandığını doğrula; yalnızca grup sayfasını açmak yeterli değildir.</li>
+            <li>Google Play test sayfasında katılım onayını tamamla. Yeni test erişiminin ve grup üyeliğinin yansıması biraz zaman alabilir; bir süre sonra test bağlantısını yeniden dene.</li>
+          </ol>
+          <p>Sorun sürerse Google Grubu'nda gördüğün hata mesajını paylaşabilirsin. Ekran görüntüsündeki kişisel bilgilerini gizle.</p>
+        </details>
+        <details>
+          <summary>Gruba katıldım. Teste de katılmış sayılır mıyım?</summary>
+          <p>Henüz değil. Google Grubu üyeliği erişim için ilk adımdır. İkinci adımdaki Google Play test sayfasını açıp “Test kullanıcısı ol” onayını da tamamlamalısın.</p>
+        </details>
+        <details>
+          <summary>Grup sayfasında “Gruba katıl” düğmesini göremiyorum.</summary>
+          <p>Önce doğru Google hesabıyla oturum açtığını kontrol et. Zaten üyeysen grup sayfası üyelik durumunu gösterebilir. Üyeliğin yoksa ve katılım seçeneği de görünmüyorsa sayfayı Chrome'da yeniden açıp Google hesabını kontrol et.</p>
+        </details>
+        <details>
+          <summary>Telefonda birden fazla Google hesabım var.</summary>
+          <p>Grup ve test sayfasında sağ üstteki profil resmine dokunarak katılacağın hesabı seç. Play Store uygulamasında da profil resmine dokunup aynı hesaba geç. Başka bir hesapla gruba katılman, kullandığın Play Store hesabına test erişimi vermez.</p>
+        </details>
+        <details>
+          <summary>Bağlantı WhatsApp içinde açılıyor veya giriş yapamıyorum.</summary>
+          <p>Sayfayı Chrome gibi haricî bir tarayıcıda aç. WhatsApp menüsünde uygun seçenek yoksa bu sayfanın bağlantısını kopyalayıp Chrome'a yapıştır. Giriş ve katılım işlemlerini Google'ın kendi sayfalarında tamamla.</p>
+        </details>
+        <details>
+          <summary>Hata veya önerilerimi nereye yazabilirim?</summary>
+          <p>Google Grubu'nda paylaşabilirsin. Telefon modelini, Android sürümünü ve soruna yol açan adımları yazman yardımcı olur. Şifre, ödeme bilgisi veya kişisel hesap bilgisi gönderme.</p>
+        </details>
+      </div>
+    </section>
+
+    <p class="privacy-note">Bu sayfa e-posta adresi toplamaz veya izleme kodu kullanmaz. Üyelik ve test kaydı Google Grubu ile Google Play'de tamamlanır.</p>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <span>Number War · Doğukan Kömürcü</span>
+      <nav aria-label="Bilgi bağlantıları"><a href="number-war.html">Oyunu tanı</a><a href="number-war-support.html">Destek</a><a href="number-war-privacy.html#tr">Gizlilik</a></nav>
+    </div>
+  </footer>
+</body>
+</html>
