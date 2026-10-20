@@ -1,5 +1,13 @@
 (() => {
-  let language = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'tr';
+  const queryLanguage = new URLSearchParams(location.search).get('lang');
+  const defaultLanguage = document.querySelector('meta[name="default-language"]')?.content || 'tr';
+  const preferredLanguage = (navigator.languages || [navigator.language]).find(value => /^(tr|en)(-|$)/i.test(value || ''));
+  let savedLanguage = null;
+  try { savedLanguage = localStorage.getItem('number-war-site-language'); } catch { /* Language still works when storage is unavailable. */ }
+  let language = ['tr', 'en'].includes(queryLanguage) ? queryLanguage
+    : defaultLanguage === 'en' ? 'en'
+    : ['tr', 'en'].includes(savedLanguage) ? savedLanguage
+    : preferredLanguage?.toLowerCase().startsWith('en') ? 'en' : 'tr';
   let move = 0;
   const text = (tr, en) => language === 'en' ? en : tr;
   function paintDemo() {
@@ -32,17 +40,32 @@
     document.querySelectorAll('[data-language]').forEach(button => { button.setAttribute('aria-pressed', String(button.dataset.language === language)); });
     const title = document.querySelector('meta[name="title-tr"]');
     if (title) document.title = language === 'en' ? document.querySelector('meta[name="title-en"]').content : title.content;
+    document.querySelectorAll('[data-meta-tr][data-meta-en]').forEach(element => {
+      element.content = language === 'en' ? element.dataset.metaEn : element.dataset.metaTr;
+    });
+    const locale = document.querySelector('meta[property="og:locale"]');
+    if (locale) locale.content = language === 'en' ? 'en_US' : 'tr_TR';
+    const page = document.querySelector(`meta[name="page-${language}"]`)?.content;
+    if (page) {
+      const canonical = new URL(page, location.href);
+      const link = document.querySelector('link[rel="canonical"]');
+      if (link) link.href = canonical;
+      const socialURL = document.querySelector('meta[property="og:url"]');
+      if (socialURL) socialURL.content = canonical;
+    }
     const description = document.querySelector('meta[name="description"]');
     if (description?.dataset[language]) description.content = description.dataset[language];
     paintDemo();
     if (updateURL) {
       const url = new URL(location.href);
-      if (language === 'en') url.searchParams.set('lang','en'); else url.searchParams.delete('lang');
+      if (page) url.pathname = new URL(page, location.href).pathname;
+      url.searchParams.delete('lang');
+      try { localStorage.setItem('number-war-site-language', language); } catch { /* No persistence is required. */ }
       try { history.replaceState(null,'',url); } catch { /* Local previews still support language selection. */ }
     }
   }
   document.querySelectorAll('[data-language]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.language)));
   document.querySelector('[data-demo-next]')?.addEventListener('click', () => { move = Math.min(2, move + 1); paintDemo(); });
   document.querySelector('[data-demo-reset]')?.addEventListener('click', () => { move = 0; paintDemo(); document.querySelector('[data-demo-next]').focus(); });
-  setLanguage(language, false);
+  setLanguage(language, language !== defaultLanguage || ['tr', 'en'].includes(queryLanguage));
 })();

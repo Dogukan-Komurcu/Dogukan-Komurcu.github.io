@@ -1,0 +1,15 @@
+Number War website additions — 20 October 2026
+
+The website remains on the existing GitHub Pages repository. No game service or cookie tracking was added. The language preference is stored locally as number-war-site-language and can be changed using TR / EN.
+
+All gameplay images are derived from the SHA-verified real captures in number-war/resources/storefront/captures.json. No game tiles, numbers, controls or gameplay were redrawn.
+- gallery-keys.png: keys.jpg, top-left crop x18 y482 width850 height850.
+- gallery-hunter.png: boss-active.png, top-left crop x12 y475 width872 height960.
+- gallery-themes-tr.png and gallery-themes-en.png: corresponding phone-*-themes.png, top-left crop x45 y560 width1090 height1200.
+- video-poster.png: original classic-before.png.
+- classic-gameplay-tr.mp4: original16-second silent real gameplay clip from the locally preserved GitHub18October2026 release backup, 03_Videolar/Ham_Klipler/01_Klasik_TR.mp4. 886x1920, no audio track. Not a new App Store preview submission.
+- og-tr.png and og-en.png:1200x630 code-native AppKit typography and real Operations board crop x28 y635 width1123 height1123; actual current app icon preserved. Original composition, no fabricated gameplay.
+
+Base pages are Turkish. Static -en.html alternatives contain English titles, body copy, social metadata and direct English links before JavaScript runs. Both alternatives support ?lang=tr/en and TR/EN controls; base pages use remembered language or the first supported browser language as fallback.
+
+Current feature scope is explicitly the published iOS1.1.4 release. Planned1.1.5 cloud/Game Center support is not advertised as available. Accessibility page describes current settings and does not claim universal VoiceOver/Dynamic Type compatibility. Age suitability records the13+ Connect rating checked20October2026 and directs players to their local storefront rating.
